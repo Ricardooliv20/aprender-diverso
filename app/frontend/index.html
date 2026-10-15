@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender Diverso - Login | CETI João dos Santos Braga</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+
+    <main class="login-container" role="main">
+        
+        <!-- Cabeçalho institucional -->
+        <header class="login-header">
+            <div class="logo-escola" aria-hidden="true">🏫</div>
+            <h1 class="titulo-principal">Aprender Diverso</h1>
+            <p class="subtitulo">CETI João dos Santos Braga</p>
+            <p class="descricao">Plataforma de Acompanhamento Educacional Individualizado</p>
+        </header>
+
+        <!-- Formulário de login -->
+        <form class="login-form" id="loginForm" aria-label="Formulário de login">
+            
+            <div class="form-group">
+                <label for="email">E-mail institucional</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="seu.email@escola.com"
+                    required
+                    autocomplete="email"
+                    aria-required="true"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input 
+                    type="password" 
+                    id="senha" 
+                    name="senha" 
+                    placeholder="Digite sua senha"
+                    required
+                    autocomplete="current-password"
+                    aria-required="true"
+                >
+            </div>
+
+            <div class="form-group perfil-group">
+                <label for="perfil">Entrar como:</label>
+                <select id="perfil" name="perfil" required aria-required="true">
+                    <option value="">Selecione o perfil</option>
+                    <option value="professor">👩‍🏫 Professor(a)</option>
+                    <option value="responsavel">👨‍👩‍👧 Responsável</option>
+                    <option value="admin">⚙️ Administrador</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-primario" aria-label="Entrar no sistema">
+                Entrar
+            </button>
+
+            <p class="link-ajuda">
+                <a href="#" aria-label="Recuperar senha">Esqueci minha senha</a>
+            </p>
+
+        </form>
+
+        <!-- Rodapé -->
+        <footer class="login-footer">
+            <p>🔒 Ambiente seguro • Em conformidade com a LGPD</p>
+        </footer>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

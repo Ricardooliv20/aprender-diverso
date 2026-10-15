@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Responsável | Aprender Diverso</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body class="app-body">
+
+    <header class="topbar" role="banner">
+        <div class="topbar-esquerda">
+            <span class="topbar-logo" aria-hidden="true">🏫</span>
+            <div>
+                <h1 class="topbar-titulo">Aprender Diverso</h1>
+                <p class="topbar-subtitulo">CETI João dos Santos Braga</p>
+            </div>
+        </div>
+        <div class="topbar-direita">
+            <span class="usuario-info" id="usuarioInfo">👨‍👩‍👧 Responsável</span>
+            <a href="/" class="btn-sair" aria-label="Sair do sistema">Sair</a>
+        </div>
+    </header>
+
+    <div class="app-layout">
+
+        <nav class="sidebar" aria-label="Menu principal">
+            <ul class="sidebar-menu">
+                <li><a href="/responsavel" class="ativo" aria-current="page">📊 Dashboard</a></li>
+                <li><a href="#" onclick="alert('Em breve: relatórios bimestrais'); return false;">📄 Relatórios</a></li>
+                <li><a href="/tcle">📝 Termo de Consentimento</a></li>
+            </ul>
+        </nav>
+
+        <main class="conteudo" role="main">
+
+            <header class="pagina-header">
+                <h2 class="pagina-titulo">Acompanhamento de Enzo Almeida</h2>
+                <p class="pagina-descricao">6º Ano A • Última atualização: agora</p>
+            </header>
+
+            <section class="cards-resumo" aria-label="Resumo do período">
+                <div class="card-resumo">
+                    <span class="resumo-icone" aria-hidden="true">📝</span>
+                    <span class="resumo-valor">—</span>
+                    <span class="resumo-label">Feedbacks registrados</span>
+                </div>
+                <div class="card-resumo">
+                    <span class="resumo-icone" aria-hidden="true">🎯</span>
+                    <span class="resumo-valor">—</span>
+                    <span class="resumo-label">Foco e atenção</span>
+                </div>
+                <div class="card-resumo">
+                    <span class="resumo-icone" aria-hidden="true">🤝</span>
+                    <span class="resumo-valor">—</span>
+                    <span class="resumo-label">Interação social</span>
+                </div>
+                <div class="card-resumo">
+                    <span class="resumo-icone" aria-hidden="true">📚</span>
+                    <span class="resumo-valor">—</span>
+                    <span class="resumo-label">Execução de tarefas</span>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3 class="categoria-titulo">📈 Evolução Semanal</h3>
+                <p class="pagina-descricao" style="margin-bottom: 16px;">
+                    Acompanhamento das últimas 6 semanas
+                </p>
+                <div class="grafico-container">
+                    <canvas id="graficoEvolucao" aria-label="Gráfico de evolução semanal do aluno" role="img"></canvas>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3 class="categoria-titulo">🕒 Últimos Feedbacks</h3>
+                <ul class="lista-feedbacks" aria-label="Lista de feedbacks recentes">
+                    <li class="feedback-item feedback-vazio">
+                        <p>Carregando feedbacks...</p>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

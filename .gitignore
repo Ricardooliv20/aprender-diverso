@@ -1,0 +1,19 @@
+# Ambiente virtual
+venv/
+__pycache__/
+*.pyc
+
+# Arquivos de ambiente
+.env
+
+# Banco de dados
+*.db
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db

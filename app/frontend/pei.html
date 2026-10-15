@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEI Digital | Aprender Diverso</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app-body">
+
+    <header class="topbar" role="banner">
+        <div class="topbar-esquerda">
+            <span class="topbar-logo" aria-hidden="true">🏫</span>
+            <div>
+                <h1 class="topbar-titulo">Aprender Diverso</h1>
+                <p class="topbar-subtitulo">CETI João dos Santos Braga</p>
+            </div>
+        </div>
+        <div class="topbar-direita">
+            <span class="usuario-info" id="usuarioInfo">👩‍🏫 Professor(a)</span>
+            <a href="/" class="btn-sair" aria-label="Sair do sistema">Sair</a>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <nav class="sidebar" aria-label="Menu principal">
+            <ul class="sidebar-menu">
+                <li><a href="/professor">📝 Registrar Feedback</a></li>
+                <li><a href="/pei" class="ativo" aria-current="page">📋 PEI Digital</a></li>
+                <li><a href="#" onclick="alert('Em breve: lista de alunos'); return false;">👥 Meus Alunos</a></li>
+                <li><a href="#" onclick="alert('Em breve: relatórios'); return false;">📄 Relatórios</a></li>
+            </ul>
+        </nav>
+
+        <main class="conteudo" role="main">
+
+            <header class="pagina-header">
+                <h2 class="pagina-titulo">Plano Educacional Individualizado</h2>
+                <p class="pagina-descricao">Objetivos, adaptações e estratégias personalizadas por aluno.</p>
+            </header>
+
+            <section class="card">
+                <label for="alunoPei" class="label-destaque">Selecione o aluno</label>
+                <select id="alunoPei" class="select-grande">
+                    <option value="">Carregando alunos...</option>
+                </select>
+            </section>
+
+            <!-- Área que será preenchida via JavaScript (futuro) -->
+            <div id="peiConteudo">
+                <section class="card card-info-aluno">
+                    <p style="text-align: center; color: #6B7B8C;">
+                        Selecione um aluno acima para visualizar o PEI.
+                    </p>
+                </section>
+            </div>
+
+            <div class="acoes-form">
+                <button class="btn-secundario" onclick="window.location.href='/professor'">← Voltar</button>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

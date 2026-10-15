@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo de Consentimento | Aprender Diverso</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app-body">
+
+    <header class="topbar" role="banner">
+        <div class="topbar-esquerda">
+            <span class="topbar-logo" aria-hidden="true">🏫</span>
+            <div>
+                <h1 class="topbar-titulo">Aprender Diverso</h1>
+                <p class="topbar-subtitulo">CETI João dos Santos Braga</p>
+            </div>
+        </div>
+        <div class="topbar-direita">
+            <span class="usuario-info" id="usuarioInfo">👨‍👩‍👧 Responsável</span>
+            <a href="/" class="btn-sair" aria-label="Sair do sistema">Sair</a>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <nav class="sidebar" aria-label="Menu principal">
+            <ul class="sidebar-menu">
+                <li><a href="/responsavel">📊 Dashboard</a></li>
+                <li><a href="#" onclick="alert('Em breve: relatórios bimestrais'); return false;">📄 Relatórios</a></li>
+                <li><a href="/tcle" class="ativo" aria-current="page">📝 Termo de Consentimento</a></li>
+            </ul>
+        </nav>
+
+        <main class="conteudo" role="main">
+
+            <header class="pagina-header">
+                <h2 class="pagina-titulo">Termo de Consentimento Livre e Esclarecido (TCLE)</h2>
+                <p class="pagina-descricao">
+                    Leia com atenção. Em conformidade com a LGPD (Lei 13.709/2018).
+                </p>
+            </header>
+
+            <section class="card card-status-tcle">
+                <div class="status-icon" aria-hidden="true">⏳</div>
+                <div>
+                    <h3 class="status-titulo">Aguardando aceite</h3>
+                    <p class="status-descricao">
+                        Para visualizar o acompanhamento de <strong>Enzo Almeida</strong>,
+                        é necessário aceitar o termo abaixo.
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3 class="categoria-titulo">📄 Termo de Consentimento</h3>
+
+                <div class="termo-texto" tabindex="0" aria-label="Texto do termo de consentimento">
+                    <p><strong>1. Finalidade do Tratamento de Dados</strong></p>
+                    <p>
+                        Os dados coletados por meio desta plataforma têm como finalidade exclusiva
+                        o acompanhamento educacional e comportamental individualizado do(a) aluno(a),
+                        subsidiando a construção e a atualização do Plano Educacional Individualizado (PEI).
+                    </p>
+
+                    <p><strong>2. Dados Coletados</strong></p>
+                    <p>
+                        Serão tratados dados pessoais do(a) aluno(a) (nome, turma, idade, diagnóstico,
+                        observações pedagógicas) e registros diários realizados por professores
+                        (micro-feedbacks categorizados por foco, regulação sensorial, interação social
+                        e execução de tarefas).
+                    </p>
+
+                    <p><strong>3. Base Legal e Conformidade</strong></p>
+                    <p>
+                        O tratamento de dados está fundamentado no consentimento do responsável legal,
+                        conforme o Art. 7º, inciso I da LGPD. Os dados são tratados com sigilo,
+                        armazenados de forma segura e acessados apenas por profissionais autorizados.
+                    </p>
+
+                    <p><strong>4. Direitos do Titular</strong></p>
+                    <p>
+                        O responsável legal poderá, a qualquer momento, solicitar acesso, correção,
+                        portabilidade ou revogação do consentimento, conforme Art. 18 da LGPD,
+                        por meio da secretaria escolar.
+                    </p>
+
+                    <p><strong>5. Revogação</strong></p>
+                    <p>
+                        A revogação do consentimento implicará na interrupção imediata do tratamento
+                        dos dados e na exclusão dos registros vinculados ao(à) aluno(a) após o prazo
+                        legal aplicável.
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="checkbox-aceite">
+                    <input 
+                        type="checkbox" 
+                        id="aceite" 
+                        aria-required="true"
+                        aria-describedby="descAceite"
+                    >
+                    <label for="aceite">
+                        Declaro que li, compreendi e <strong>concordo</strong> com os termos acima,
+                        autorizando o tratamento dos dados do(a) aluno(a) para as finalidades descritas.
+                    </label>
+                </div>
+                <p id="descAceite" class="aviso-lgpd">
+                    🔒 Seus dados estão protegidos conforme a Lei Geral de Proteção de Dados (LGPD).
+                </p>
+            </section>
+
+            <div class="acoes-form">
+                <button class="btn-secundario" onclick="window.location.href='/responsavel'">← Voltar</button>
+                <button class="btn-primario" id="btnAceitar" disabled>✔ Aceitar Termo</button>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

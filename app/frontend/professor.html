@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Professor | Aprender Diverso</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app-body">
+
+    <header class="topbar" role="banner">
+        <div class="topbar-esquerda">
+            <span class="topbar-logo" aria-hidden="true">🏫</span>
+            <div>
+                <h1 class="topbar-titulo">Aprender Diverso</h1>
+                <p class="topbar-subtitulo">CETI João dos Santos Braga</p>
+            </div>
+        </div>
+        <div class="topbar-direita">
+            <span class="usuario-info" id="usuarioInfo">👩‍🏫 Professor(a)</span>
+            <a href="/" class="btn-sair" aria-label="Sair do sistema">Sair</a>
+        </div>
+    </header>
+
+    <div class="app-layout">
+
+        <nav class="sidebar" aria-label="Menu principal">
+            <ul class="sidebar-menu">
+                <li><a href="/professor" class="ativo" aria-current="page">📝 Registrar Feedback</a></li>
+                <li><a href="/pei">📋 PEI Digital</a></li>
+                <li><a href="#" onclick="alert('Em breve: lista de alunos'); return false;">👥 Meus Alunos</a></li>
+                <li><a href="#" onclick="alert('Em breve: relatórios'); return false;">📄 Relatórios</a></li>
+            </ul>
+        </nav>
+
+        <main class="conteudo" role="main">
+
+            <header class="pagina-header">
+                <h2 class="pagina-titulo">Registrar Micro-Feedback</h2>
+                <p class="pagina-descricao">Registre rapidamente a rotina do aluno. Leva menos de 30 segundos.</p>
+            </header>
+
+            <section class="card">
+                <label for="aluno" class="label-destaque">Selecione o aluno</label>
+                <select id="aluno" class="select-grande" required>
+                    <option value="">Carregando alunos...</option>
+                </select>
+            </section>
+
+            <form id="formFeedback" class="form-feedback">
+
+                <section class="card categoria-card">
+                    <h3 class="categoria-titulo">🎯 Foco e Atenção</h3>
+                    <div class="tags-container" role="group" aria-label="Nível de foco">
+                        <button type="button" class="tag" data-categoria="foco" data-valor="otimo">Ótimo</button>
+                        <button type="button" class="tag" data-categoria="foco" data-valor="bom">Bom</button>
+                        <button type="button" class="tag" data-categoria="foco" data-valor="regular">Regular</button>
+                        <button type="button" class="tag" data-categoria="foco" data-valor="dificuldade">Dificuldade</button>
+                    </div>
+                </section>
+
+                <section class="card categoria-card">
+                    <h3 class="categoria-titulo">🌊 Regulação Sensorial</h3>
+                    <div class="tags-container" role="group" aria-label="Nível de regulação sensorial">
+                        <button type="button" class="tag" data-categoria="sensorial" data-valor="calmo">Calmo</button>
+                        <button type="button" class="tag" data-categoria="sensorial" data-valor="agitado">Agitado</button>
+                        <button type="button" class="tag" data-categoria="sensorial" data-valor="sobrecarga">Sobrecarga</button>
+                        <button type="button" class="tag" data-categoria="sensorial" data-valor="retraido">Retraído</button>
+                    </div>
+                </section>
+
+                <section class="card categoria-card">
+                    <h3 class="categoria-titulo">🤝 Interação Social</h3>
+                    <div class="tags-container" role="group" aria-label="Nível de interação social">
+                        <button type="button" class="tag" data-categoria="social" data-valor="participativo">Participativo</button>
+                        <button type="button" class="tag" data-categoria="social" data-valor="colaborativo">Colaborativo</button>
+                        <button type="button" class="tag" data-categoria="social" data-valor="isolado">Isolado</button>
+                        <button type="button" class="tag" data-categoria="social" data-valor="conflito">Conflito</button>
+                    </div>
+                </section>
+
+                <section class="card categoria-card">
+                    <h3 class="categoria-titulo">📚 Execução de Tarefas</h3>
+                    <div class="tags-container" role="group" aria-label="Nível de execução de tarefas">
+                        <button type="button" class="tag" data-categoria="tarefas" data-valor="concluiu">Concluiu</button>
+                        <button type="button" class="tag" data-categoria="tarefas" data-valor="parcial">Parcial</button>
+                        <button type="button" class="tag" data-categoria="tarefas" data-valor="nao-concluiu">Não concluiu</button>
+                        <button type="button" class="tag" data-categoria="tarefas" data-valor="recusou">Recusou</button>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <label for="observacao" class="label-destaque">Observação (opcional)</label>
+                    <textarea 
+                        id="observacao" 
+                        rows="3" 
+                        maxlength="280"
+                        placeholder="Ex: Teve dificuldade com barulho no final da aula..."
+                        aria-describedby="contadorObs"
+                    ></textarea>
+                    <p id="contadorObs" class="contador">0 / 280 caracteres</p>
+                </section>
+
+                <div class="acoes-form">
+                    <button type="button" class="btn-secundario" onclick="alert('Rascunho salvo (fictício)')">Salvar rascunho</button>
+                    <button type="submit" class="btn-primario btn-largo">✔ Registrar Feedback</button>
+                </div>
+
+            </form>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
