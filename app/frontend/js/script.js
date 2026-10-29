@@ -4,8 +4,6 @@
 
 const API_URL = window.location.origin;
 const ALUNO_ID_PADRAO = 1;
-
-// Trava global para evitar múltiplos envios
 let enviandoFeedback = false;
 
 // ============================================================
@@ -17,9 +15,7 @@ function salvarToken(token, usuario) {
     localStorage.setItem('usuario', JSON.stringify(usuario));
 }
 
-function obterToken() {
-    return localStorage.getItem('token');
-}
+function obterToken() { return localStorage.getItem('token'); }
 
 function obterUsuarioLogado() {
     const dados = localStorage.getItem('usuario');
@@ -126,10 +122,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // DROPDOWN DE ALUNOS
-    const selectAluno = document.getElementById('aluno');
+    // ========================================================
+    // LÓGICA ESPECÍFICA DO PEI
+    // ========================================================
     const selectAlunoPei = document.getElementById('alunoPei');
-    if ((selectAluno || selectAlunoPei) && exigirLogin()) {
+    if (selectAlunoPei) {
+        if (exigirLogin()) {
+            carregarAlunos(); // Carrega o dropdown do PEI
+        }
+    }
+
+    // LÓGICA DO DROPDOWN DO PROFESSOR
+    const selectAluno = document.getElementById('aluno');
+    if (selectAluno && exigirLogin()) {
         carregarAlunos();
     }
 
@@ -158,8 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         formFeedback.addEventListener('submit', async (evento) => {
             evento.preventDefault();
-
-            // 🚨 TRAVA ANTI-DUPLICAÇÃO
             if (enviandoFeedback) return;
             enviandoFeedback = true;
 
@@ -199,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (erro) {
                 alert('Erro ao registrar: ' + erro.message);
             } finally {
-                enviandoFeedback = false; // Libera a trava
+                enviandoFeedback = false;
             }
         });
     }
@@ -242,9 +245,61 @@ async function carregarAlunos() {
             : '<option value="">-- Escolha um aluno --</option>' + alunos.map(a => `<option value="${a.id}">${a.nome}</option>`).join('');
 
         if (selectAluno) selectAluno.innerHTML = html;
-        if (selectAlunoPei) selectAlunoPei.innerHTML = html;
+        if (selectAlunoPei) {
+            selectAlunoPei.innerHTML = html;
+            // Quando o professor escolher um aluno no PEI, mostra os dados na tela
+            selectAlunoPei.addEventListener('change', (e) => {
+                const alunoId = e.target.value;
+                if (alunoId) {
+                    carregarPei(alunoId);
+                }
+            });
+        }
     } catch (erro) {
         console.error('Erro ao carregar alunos:', erro);
+    }
+}
+
+// FUNÇÃO NOVA: Carrega os dados do PEI do aluno selecionado
+async function carregarPei(alunoId) {
+    const container = document.getElementById('peiConteudo');
+    container.innerHTML = '<p>Carregando PEI...</p>';
+    try {
+        const pei = await apiFetch(`/peis/aluno/${alunoId}`);
+        
+        const objetivosHtml = pei.objetivos.map(obj => `
+            <li class="objetivo-item">
+                <span class="badge badge-ok">${obj.status}</span>
+                <p>${obj.descricao}</p>
+            </li>
+        `).join('');
+
+        const adaptacoesHtml = pei.adaptacoes.map(adp => `
+            <li>📌 ${adp.descricao}</li>
+        `).join('');
+
+        container.innerHTML = `
+            <section class="card card-info-aluno">
+                <div class="aluno-header">
+                    <div class="aluno-avatar">👦</div>
+                    <div>
+                        <h3 class="aluno-nome">Aluno ID ${pei.aluno_id}</h3>
+                        <p class="aluno-detalhe">PEI Ativo</p>
+                    </div>
+                </div>
+                <p class="aluno-descricao"><strong>Resumo:</strong> ${pei.resumo || 'Nenhum resumo cadastrado.'}</p>
+            </section>
+            <section class="card">
+                <h3 class="categoria-titulo">🎯 Objetivos do PEI</h3>
+                <ul class="lista-objetivos">${objetivosHtml || '<li>Nenhum objetivo cadastrado.</li>'}</ul>
+            </section>
+            <section class="card">
+                <h3 class="categoria-titulo">🛠️ Adaptações</h3>
+                <ul class="lista-adaptacoes">${adaptacoesHtml || '<li>Nenhuma adaptação cadastrada.</li>'}</ul>
+            </section>
+        `;
+    } catch (erro) {
+        container.innerHTML = `<p style="color: red;">Este aluno ainda não possui um PEI cadastrado.</p>`;
     }
 }
 
