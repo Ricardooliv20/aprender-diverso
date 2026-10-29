@@ -10,4 +10,4 @@ pydantic[email]
 pydantic-settings
 jinja2
 aiofiles
-psycopg2-binary
+psycopg[binary]
