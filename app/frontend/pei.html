@@ -18,7 +18,7 @@
         </div>
         <div class="topbar-direita">
             <span class="usuario-info" id="usuarioInfo">👩‍🏫 Professor(a)</span>
-            <a href="/" class="btn-sair" aria-label="Sair do sistema">Sair</a>
+            <a href="/" class="btn-sair">Sair</a>
         </div>
     </header>
 
@@ -27,13 +27,11 @@
             <ul class="sidebar-menu">
                 <li><a href="/professor">📝 Registrar Feedback</a></li>
                 <li><a href="/pei" class="ativo" aria-current="page">📋 PEI Digital</a></li>
-                <li><a href="#" onclick="alert('Em breve: lista de alunos'); return false;">👥 Meus Alunos</a></li>
-                <li><a href="#" onclick="alert('Em breve: relatórios'); return false;">📄 Relatórios</a></li>
+                <li><a href="#" onclick="alert('Em breve'); return false;">👥 Meus Alunos</a></li>
             </ul>
         </nav>
 
         <main class="conteudo" role="main">
-
             <header class="pagina-header">
                 <h2 class="pagina-titulo">Plano Educacional Individualizado</h2>
                 <p class="pagina-descricao">Objetivos, adaptações e estratégias personalizadas por aluno.</p>
@@ -46,7 +44,6 @@
                 </select>
             </section>
 
-            <!-- Área que será preenchida via JavaScript (futuro) -->
             <div id="peiConteudo">
                 <section class="card card-info-aluno">
                     <p style="text-align: center; color: #6B7B8C;">
@@ -58,7 +55,6 @@
             <div class="acoes-form">
                 <button class="btn-secundario" onclick="window.location.href='/professor'">← Voltar</button>
             </div>
-
         </main>
     </div>
 
