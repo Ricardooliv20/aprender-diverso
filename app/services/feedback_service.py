@@ -97,8 +97,13 @@ def agrupar_por_semana(feedbacks: List[Feedback]) -> Dict:
         )
 
     for fb in feedbacks:
+        # 🔧 CORREÇÃO: Normaliza a data do feedback para naive (sem fuso horário)
+        # O PostgreSQL retorna datetime "aware" (com fuso) e o Python não compara
+        # com datetime "naive" (sem fuso) — isso gerava o erro 500.
+        data_fb = fb.criado_em.replace(tzinfo=None) if fb.criado_em.tzinfo else fb.criado_em
+
         for s in semanas:
-            if s["inicio"] <= fb.criado_em <= s["fim"]:
+            if s["inicio"] <= data_fb <= s["fim"]:
                 for cat, val in fb.categorias.items():
                     if cat in VALORES_NUMERICOS and val in VALORES_NUMERICOS[cat]:
                         s["dados"][cat].append(VALORES_NUMERICOS[cat][val])
