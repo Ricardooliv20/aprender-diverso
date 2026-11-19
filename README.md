@@ -278,7 +278,32 @@ Contribuições são **muito bem-vindas**! 💙
 Este projeto está sob a licença **MIT**.
 Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
+---
+
 <div align="center">
+
+## 👥 Contribuidores
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Ricardooliv20">
+        <img src="https://github.com/Ricardooliv20.png" width="100px;" alt="Ricardo Oliveira"/><br />
+        <sub><b>Ricardo Oliveira</b></sub>
+      </a><br />
+      <sub>💻 Desenvolvedor principal</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/igorsimoesgomes0-alt">
+        <img src="https://github.com/igorsimoesgomes0-alt.png" width="100px;" alt="Igor Simões"/><br />
+        <sub><b>Igor Simões</b></sub>
+      </a><br />
+      <sub>🤝 Contribuidor</sub>
+    </td>
+  </tr>
+</table>
+
+---
 
 ### ⭐ Gostou do projeto?
 
@@ -286,6 +311,6 @@ Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
 ---
 
-**Feito com 💙 por [Ricardo Oliveira](https://github.com/Ricardooliv20)** e **[Igor Simões].(https://github.com/igorsimoesgomes0-alt)**
+**Feito com 💙 por [Ricardo Oliveira](https://github.com/Ricardooliv20) & [Igor Simões](https://github.com/igorsimoesgomes0-alt)**
 
 </div>
