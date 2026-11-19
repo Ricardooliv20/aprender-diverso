@@ -286,6 +286,6 @@ Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
 ---
 
-**Feito com 💙 por [Ricardo Oliveira](https://github.com/Ricardooliv20)**
+**Feito com 💙 por [Ricardo Oliveira](https://github.com/Ricardooliv20) e [Igor Simões]**
 
 </div>
