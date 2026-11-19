@@ -133,6 +133,7 @@ aprender-diverso/
 │
 ├── 📄 requirements.txt
 ├── 🔐 .env                # variáveis de ambiente (NÃO versionar)
+├── 📋 .env.example        # modelo das variáveis de ambiente
 └── 💾 aprender_diverso.db # SQLite local (dev)
 ```
 
@@ -173,8 +174,12 @@ pip install -r requirements.txt
 ```
 
 ### 4️⃣ Configure o `.env`
-Crie um arquivo `.env` na raiz do projeto:
+Copie o modelo e preencha:
+```bash
+cp .env.example .env
+```
 
+Conteúdo esperado do `.env`:
 ```env
 APP_NAME="Aprender Diverso"
 APP_VERSION="1.0.0"
@@ -277,6 +282,14 @@ Contribuições são **muito bem-vindas**! 💙
 
 Este projeto está sob a licença **MIT**.
 Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
+
+---
+
+## 👩‍🏫 Orientação
+
+Este projeto foi desenvolvido sob orientação da **Prof. Luana Leal**.
+
+- 📧 **E-mail:** [prof.luanalealm@gmail.com](mailto:prof.luanalealm@gmail.com)
 
 ---
 
